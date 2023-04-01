@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import { Toaster } from "react-hot-toast";
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
@@ -9,6 +10,15 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <Toaster
+      position="top-right"
+      reverseOrder={false}
+      toastOptions={{
+        style: {
+          fontSize: "15px",
+        },
+      }}
+    />
     <App />
   </React.StrictMode>
 );

@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// pages
+import AddBuddies from "./pages/AddBuddies";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
+import SheetsnCourses from "./pages/SheetsnCourses";
+import Web3Login from "./pages/Web3Login";
 
 function App() {
+  // const location = useLocation();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/web3login" element={<Web3Login />} />
+          <Route path="/addbuddies" element={<AddBuddies />} />
+          <Route path="/sheetsncourses" element={<SheetsnCourses />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
